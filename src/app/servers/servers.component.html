@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        href="#"
+        class="list-group-item"
+        [routerLink]="['/servers',4,'edit']"
+        [queryParams]="{crush:'unnati'}"
+        [fragment]="'home'"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <app-edit-server></app-edit-server>
+    <hr>
+    <app-server></app-server>
+  </div>
+  <button class="btn btn-success" (click)="onHome()">Reload Page</button>
+  <router-outlet></router-outlet>
+</div>
+
